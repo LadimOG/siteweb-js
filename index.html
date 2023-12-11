@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Les Bonnes Pièces</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./node_modules/chart.js/dist/chart.umd.js" defer></script>
+    <script type="module" src="pieces.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <img src="images/logo-les-bonnes-pieces.png" alt="LOGO" />
+      <h1>Les Bonnes Pièces</h1>
+    </header>
+    <main>
+      <!-- Menu de recherche -->
+      <section class="filtres">
+        <h3>Filtres</h3>
+        <div class="box-btn">
+          <button id="btnDescription">Flitre produit avec description</button>
+          <button id="btnPrixCroissant">Filtre par prix décroissant</button
+          ><br />
+          <label for="prixMaxi">Prix maxi</label>
+          <input
+            type="range"
+            name="prixMaxi"
+            min="0"
+            max="60"
+            step="5"
+            id="inputRange"
+          /><br />
+
+          <h3>Ajouter un avis</h3>
+          <form class="formulaire-avis">
+            Identifiant de la pièce :<br />
+            <input type="number" name="piece-id" /><br />
+            Nom d'utilisateur :<br />
+            <input type="text" name="utilisateur" /><br />
+            Nombre d'étoile :<br />
+            <input type="number" name="nbEtoile" /><br />
+            Avis :<br />
+            <input type="textarea" name="commentaire" /><br />
+            <button>Envoyer</button>
+          </form>
+          <br />
+          <h3>Mise à jour des données</h3>
+          <button class="btn-maj">Mettre à jour les pièces</button><br />
+          <div class="apercuAvis">
+            <h3>Aperçu des avis</h3>
+            <canvas id="graphique-avis" width="300" height="300"></canvas>
+          </div>
+          <div class="apercuNbCommentaire">
+            <h3>Nombre de commentaire</h3>
+            <canvas
+              id="graphique-nbCommentaire"
+              width="300"
+              height="300"
+            ></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fiches produits -->
+      <section class="fiches">
+        <div class="abordable">
+          <h3>Pieces abordable :</h3>
+        </div>
+        <div class="disponible">
+          <h3>Pieces disponible :</h3>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
